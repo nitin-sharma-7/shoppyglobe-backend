@@ -1,40 +1,25 @@
-
 # 🛍️ ShoppyGlobe Backend
 
 Welcome to the backend of **ShoppyGlobe**, an eCommerce application built with **Node.js**, **Express**, **MongoDB**, and **JWT authentication**.
 
 ## 🚀 Tech Stack
 
-- **Node.js**  
-- **Express.js**  
-- **MongoDB** & **Mongoose**  
-- **dotenv**  
-- **JWT (jsonwebtoken)**  
+- **Node.js**
+- **Express.js**
+- **MongoDB** & **Mongoose**
+- **dotenv**
+- **JWT (jsonwebtoken)**
 - **Nodemon**
-
-## 📁 Project Structure
-
-```
-shoppyglobe-backend/
-│
-├── controllers/
-├── models/
-├── routes/
-├── middleware/
-├── .env
-├── server.js
-└── package.json
-```
-
----
 
 ## 📦 Products API
 
 ### GET `/products`
+
 - Fetch all products from the database.
 - Returns all products if no specific ID is provided.
 
 ### GET `/products/:id`
+
 - Fetch a single product using its dynamic `id`.
 
 ---
@@ -42,6 +27,7 @@ shoppyglobe-backend/
 ## 👤 User Authentication API
 
 ### POST `/register`
+
 - Register a new user.
 - **Required in body**:
   - `username`
@@ -50,6 +36,7 @@ shoppyglobe-backend/
   - `mobile`
 
 ### POST `/login`
+
 - Login user and receive a JWT token.
 - **Required in body**:
   - `username`
@@ -61,6 +48,7 @@ shoppyglobe-backend/
 ## 🛒 Cart API
 
 ### POST `/cart`
+
 - Add an item to the user's cart.
 - **Headers**: `Authorization: Bearer <token>`
 - **Required in body**:
@@ -72,6 +60,7 @@ shoppyglobe-backend/
 ---
 
 ### PUT `/cart/:id`
+
 - Update the quantity of a specific item in the cart.
 - **Headers**: `Authorization: Bearer <token>`
 - **Required in body**: `quantity`
@@ -79,6 +68,7 @@ shoppyglobe-backend/
 ---
 
 ### DELETE `/cart/:id`
+
 - Delete a cart item by ID.
 - **Headers**: `Authorization: Bearer <token>`
 

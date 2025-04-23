@@ -1,9 +1,21 @@
 import { userModel } from "../models/userModel.js";
 
+// POST /register -> Register a new user
 const registerUser = async (req, res) => {
-  const user = req.body;
-  await userModel.create(user);
-  res.json({ message: "user sucessfully added", user });
+  try {
+    // Extract user data from request body
+    const user = req.body;
+
+    // Create new user document in the database
+    await userModel.create(user);
+
+    // Send success response with created user data
+    res.status(201).json({ message: "User successfully added", user });
+  } catch (error) {
+    // Log the error and return server error response
+    console.error("Error registering user:", error.message);
+    res.status(500).json({ message: "Server Error" });
+  }
 };
 
 export { registerUser };
