@@ -14,6 +14,7 @@ const jwtAtuh = (req, res, next) => {
 
   try {
     // Verify the token using the secret key
+    // if token secret key is different then this line will not run  it throw an error
     const decode = jwt.verify(token, process.env.SECRET_KEY);
 
     // Attach decoded user info to request object
